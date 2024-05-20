@@ -1,37 +1,22 @@
+// WAP  to print number ,alphabets and special character on the output screen.
 #include <iostream>
+using namespace std;
 
-int main() {
-    int num1, num2;
-
-    // Get two numbers from the user
-    std::cout << "Enter the first number: ";
-    std::cin >> num1;
-    std::cout << "Enter the second number: ";
-    std::cin >> num2;
-
-    // Demonstrate arithmetic and assignment operators
-    std::cout << "Arithmetic and Assignment Operators Demo:" << std::endl;
-    std::cout << "Initial values: num1 = " << num1 << ", num2 = " << num2 << std::endl;
-
-    // Addition and assignment
-    num1 += num2;
-    std::cout << "After num1 += num2, num1 = " << num1 << std::endl;
-
-    // Subtraction and assignment
-    num1 -= num2;
-    std::cout << "After num1 -= num2, num1 = " << num1 << std::endl;
-
-    // Multiplication and assignment
-    num1 *= num2;
-    std::cout << "After num1 *= num2, num1 = " << num1 << std::endl;
-
-    // Division and assignment
-    num1 /= num2;
-    std::cout << "After num1 /= num2, num1 = " << num1 << std::endl;
-
-    // Modulus and assignment
-    num1 %= num2;
-    std::cout << "After num1 %= num2, num1 = " << num1 << std::endl;
+int main (){
+    cout<<"Numbers :-";
+    for(int i=1 ; i<=9 ; i++){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<"Alphabets :";
+    for(char i='A'; i<='Z';i++){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<"Special Character :";
+    for(char i=33;i<=47;i++){
+        cout<<i<<" ";
+    }
 
     return 0;
 }
