@@ -1,25 +1,30 @@
+// WAP to count number of word in a sentence.
 #include <iostream>
-#include <cmath>
+#include <sstream>
 
-// Function to calculate power
-double power(double base, int exponent) {
-    // Using the pow function from cmath library to calculate power
-    return std::pow(base, exponent);
+using namespace std;
+
+int countWords(string sentence) {
+    // Initialize a stringstream with the sentence
+    stringstream ss(sentence);
+    string word;
+    int count = 0;
+
+    // Count words in the sentence
+    while (ss >> word) {
+        count++;
+    }
+
+    return count;
 }
 
 int main() {
-    double base;
-    int exponent;
+    string sentence;
+    cout << "Enter a sentence: ";
+    getline(cin, sentence);
 
-    // Accept base and exponent from the user
-    std::cout << "Enter the base: ";
-    std::cin >> base;
-    std::cout << "Enter the exponent: ";
-    std::cin >> exponent;
-
-    // Calculate and display the result
-    double result = power(base, exponent);
-    std::cout << "Result: " << result << std::endl;
+    int wordCount = countWords(sentence);
+    cout << "Number of words in the sentence: " << wordCount << endl;
 
     return 0;
 }
