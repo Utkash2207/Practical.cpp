@@ -1,50 +1,28 @@
+// WAP which accepts value of base and power from user and display its value (base^power)using UDF.
 #include <iostream>
-#include <string>
+using namespace std;
 
-class bank_account {
-private:
-    std::string Depositor_name;
-    std::string Acc_type;
-    double balance;
-
-public:
-    // Constructor to initialize data members
-    bank_account(std::string name, std::string type, double initial_balance) : 
-        Depositor_name(name), Acc_type(type), balance(initial_balance) {}
-
-    // Function to deposit money into the account
-    void deposit(double amount) {
-        balance += amount;
-        std::cout << "Deposit of $" << amount << " successful." << std::endl;
+// Function to calculate power of a number
+double power(double base, int exponent) {
+    double result = 1.0;
+    for (int i = 0; i < exponent; ++i) {
+        result *= base;
     }
-
-    // Function to withdraw money from the account
-    void withdraw(double amount) {
-        if (balance >= amount) {
-            balance -= amount;
-            std::cout << "Withdrawal of $" << amount << " successful." << std::endl;
-        } else {
-            std::cout << "Insufficient balance. Withdrawal failed." << std::endl;
-        }
-    }
-
-    // Function to inquire about the balance
-    void balance_inquiry() {
-        std::cout << "Current balance: $" << balance << std::endl;
-    }
-};
+    return result;
+}
 
 int main() {
-    // Create a bank account
-    bank_account account("John Doe", "Savings", 1000.0);
+    double base;
+    int exponent;
 
-    // Demonstrate account operations
-    account.deposit(500.0);
-    account.balance_inquiry();
-    account.withdraw(200.0);
-    account.balance_inquiry();
-    account.withdraw(1500.0); // This withdrawal should fail due to insufficient balance
-    account.balance_inquiry();
+    // Input base and power from the user
+    cout << "Enter the base: ";
+    cin >> base;
+    cout << "Enter the exponent: ";
+    cin >> exponent;
+
+    // Calculate and display the result using the power function
+    cout << "Result: " << power(base, exponent) << endl;
 
     return 0;
 }
