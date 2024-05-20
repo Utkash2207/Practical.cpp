@@ -1,36 +1,27 @@
-// WAP that demonstrates the basic class program to get department ,name and salary of an employee.
+// WAP which should work like a strlen function using UDF. 
 #include <iostream>
-#include <string>
 using namespace std;
-// Define the Employee class
-class Employee {
-private:
-    string department;
-    string name;
-    double salary;
 
-public:
-    // Constructor to initialize the Employee object
-    Employee(string dept, string empName, double empSalary) {
-        department = dept;
-        name = empName;
-        salary = empSalary;
+// User-defined function to calculate string length
+int stringLength(const char* str) {
+    int length = 0;
+    // Loop through the string until the null terminator is encountered
+    while (*str != '\0') {
+        length++;
+        str++; // Move to the next character
     }
-
-    // Function to display employee information
-    void displayInfo() {
-        cout << "Name: " << name << endl;
-        cout << "Department: " << department << endl;
-        cout << "Salary: $" << salary << endl;
-    }
-};
+    return length;
+}
 
 int main() {
-    // Create an Employee object
-    Employee emp1("Engineering", "Ankit Vishwakarma", 50000.0);
+    // Declare and initialize a string
+    const char* str = "Hello, World!";
 
-    // Display information about the employee
-    emp1.displayInfo();
+    // Calculate the length of the string using the user-defined function
+    int length = stringLength(str);
+
+    // Display the length of the string
+    cout << "Length of the string: " << length << endl;
 
     return 0;
 }
