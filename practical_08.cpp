@@ -1,26 +1,16 @@
+// WAP to that accepts number from user and displays all the factors of that number.
 #include <iostream>
-#include <string>
-#include <sstream>
+using namespace std;
 
-int main() {
-    std::string sentence;
-
-    // Accept a sentence from the user
-    std::cout << "Enter a sentence: ";
-    std::getline(std::cin, sentence);
-
-    // Create a string stream from the sentence
-    std::stringstream ss(sentence);
-    std::string word;
-    int wordCount = 0;
-
-    // Count the number of words
-    while (ss >> word) {
-        wordCount++;
+int main(){
+    int number;
+    cout<<"enter positive number :";
+    cin>>number;
+    cout<<"Factors of "<<number<<" are :";
+    for(int i=1;i<=number;i++){
+        if(number%i==0){
+            cout<<i<<" ";
+        }
     }
-
-    // Display the number of words
-    std::cout << "Number of words in the sentence: " << wordCount << std::endl;
-
     return 0;
 }
