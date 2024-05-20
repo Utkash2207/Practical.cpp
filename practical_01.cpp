@@ -1,27 +1,16 @@
-#include <iostream>
+// WAP addition of two number using C++ here we demonstrate structure of c++
+# include <iostream>
+using namespace std;
 
-int main() {
-    // Print numbers
-    std::cout << "Numbers:" << std::endl;
-    for (int i = 0; i < 10; ++i) {
-        std::cout << i << " ";
-    }
-    std::cout << std::endl << std::endl;
-
-    // Print alphabets
-    std::cout << "Alphabets:" << std::endl;
-    for (char ch = 'a'; ch <= 'z'; ++ch) {
-        std::cout << ch << " ";
-    }
-    std::cout << std::endl << std::endl;
-
-    // Print special characters
-    std::cout << "Special Characters:" << std::endl;
-    char special_characters[] = "!@#$%^&*()_+-=[]{}|;:',.<>?/~";
-    for (char ch : special_characters) {
-        std::cout << ch << " ";
-    }
-    std::cout << std::endl;
+int main(){
+    int a,b,sum;
+    cout<<"enter the value of a :";
+    cin>>a;
+    cout<<"enter the value of B :";
+    cin>>b;
+    sum = a+b;
+    cout<<"Sum of two Number = "<<sum;
 
     return 0;
+
 }
